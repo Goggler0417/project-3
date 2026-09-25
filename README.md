@@ -1,39 +1,21 @@
-# Tagmark v4.00
+# Tagmark v4.02
 
-v4의 첫 구현 기준선입니다. 기존 v2/v3에 패치를 덧붙이지 않고 새로운 Canonical DB 구조와 Page-local ID 체계를 사용하는 단일 HTML 앱으로 작성했습니다.
+v4.01의 기능과 데이터 구조를 그대로 유지하고 모바일 UI 대응만 수정한 버전입니다.
 
-## 구현된 핵심
-- Main → Page → Tab 계층
-- Bookmark / Record / Tag / Category Tab
-- Page-local Base36 ID allocator, Page만 DB-global ID
-- Bookmark 수동 Folder (`folderId`), Folder 삭제 시 Bookmark는 Unfiled
-- Record Input 기반 Auto Folder(group by)
-- Page-level Input, Schema → Field → Placement 구조
-- Field 삭제 시 실제 Input/value 보존
-- Bookmark/Record relation Input 기반 값 저장
-- Page 복제: 새 Page ID만 발급하고 내부 local ID는 그대로 유지
-- 선택 / 현재 검색 결과 전체 선택 / Bulk delete
-- Runtime Undo/Redo
-- IndexedDB autosave + revision
-- v4 Format 1 Export/Import
-- Import 직전 Emergency Export 다운로드
-- 기본 DB Check / Category cycle 검사
-- 앱 내부 modal 사용
+## 변경 사항
+- 720px 이하에서 전체 레이아웃을 세로형 모바일 구조로 변경
+- Page 영역을 가로 스크롤 가능한 상단 네비게이션으로 변경
+- 상단바, Tab, Toolbar를 모바일에서 가로 스크롤 가능하게 조정
+- 카드/목록을 1열 중심으로 조정
+- 입력창과 버튼을 터치하기 쉬운 크기로 조정
+- Modal을 모바일에서 하단 시트 형태로 표시하고 하단 액션을 고정
+- 작은 화면(430px 이하)에서 상단 네비게이션을 더 압축
+- iPhone safe-area를 Modal 하단에 반영
 
-## 아직 v4.00에서 제한적인 부분
-- Filter AST의 고급 UI 및 Tag/Category 전용 AND/OR 필터
-- Placement Display Rule의 Independent/Priority 편집 UI
-- Unassigned Information 전용 UI
-- 고급 Bulk Edit(Tag/Category/relation add/remove/replace)
-- Tag Head 관리 UI
-- Category 트리 전용 UI와 reparent/subtree delete UX
-- 내부 persistent backup store/Restore UI (현재 Backup은 JSON 다운로드)
-- 고급 Validator 자동 수리 및 영향도 보고
-- Virtual rendering
+## 기능 변경
+없음. v4.01의 기능, Canonical DB 구조, 저장 방식 및 동작 로직은 유지합니다.
 
-이 항목들은 v4 데이터 모델을 깨지 않고 후속 구현할 수 있도록 분리했습니다.
-
-## 검증
-- HTML에서 JavaScript를 추출하여 Node.js `--check` 구문 검사를 수행.
-- 주요 데이터 구조/ID/참조 코드를 정적 점검.
-- 실제 브라우저에서 버튼을 직접 클릭하는 상호작용 테스트는 이 환경에서 수행하지 않았습니다. 따라서 브라우저 런타임/UI 회귀는 추가 확인이 필요합니다.
+## 확인
+- HTML 내 JavaScript 구문 검사 완료
+- v4.01 대비 JavaScript 변경은 VERSION 표기 외에는 없음
+- 실제 모바일 브라우저 터치/화면 회전 테스트는 이 환경에서 수행하지 못했습니다.
