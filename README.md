@@ -1,21 +1,23 @@
-# Tagmark v4.02
+# Tagmark v4.03
 
-v4.01의 기능과 데이터 구조를 그대로 유지하고 모바일 UI 대응만 수정한 버전입니다.
+v4.02의 모바일 UI와 기존 기능을 유지하면서 남아 있던 v4 핵심 기능을 확장한 버전입니다.
 
-## 변경 사항
-- 720px 이하에서 전체 레이아웃을 세로형 모바일 구조로 변경
-- Page 영역을 가로 스크롤 가능한 상단 네비게이션으로 변경
-- 상단바, Tab, Toolbar를 모바일에서 가로 스크롤 가능하게 조정
-- 카드/목록을 1열 중심으로 조정
-- 입력창과 버튼을 터치하기 쉬운 크기로 조정
-- Modal을 모바일에서 하단 시트 형태로 표시하고 하단 액션을 고정
-- 작은 화면(430px 이하)에서 상단 네비게이션을 더 압축
-- iPhone safe-area를 Modal 하단에 반영
+## 이번 버전
+- Bookmark/Record Filter: AND/OR 선택 지원
+- Tag Filter: 중립 → 포함 → 제외 순환
+- Category Filter: Category 선택 + 하위 포함/정확히 조건
+- Display Rule: 모두/equals/contains/Remaining
+- Input 분배: Independent / Priority
+- 미지정 정보: Entity 편집 화면에서 직접 수정 가능
+- 기존 Bulk Input 편집 및 Folder 이동 유지
+- DB Check: 안전하게 판단 가능한 일부 dangling/order 문제 자동 수리
+- 대량 결과 렌더링 보호: 한 화면 최대 300 logical results 렌더링
+- v4.02 모바일 대응 유지
+- Tab/Field 순서 변경 및 등장인물/Record 복합 추가 기능 유지
 
-## 기능 변경
-없음. v4.01의 기능, Canonical DB 구조, 저장 방식 및 동작 로직은 유지합니다.
+## 이후 단계
+v4 핵심 기능 안정화 이후에는 v1/v2/v3의 실제 파일을 다시 대조하여, v4에 아직 없는 편의 기능과 사용 흐름을 선별 복원합니다. UI도 구형 Tagmark의 익숙한 배치/스타일을 기준으로 이식하되 v4 데이터 구조는 유지합니다.
 
-## 확인
-- HTML 내 JavaScript 구문 검사 완료
-- v4.01 대비 JavaScript 변경은 VERSION 표기 외에는 없음
-- 실제 모바일 브라우저 터치/화면 회전 테스트는 이 환경에서 수행하지 못했습니다.
+## 검사
+- JavaScript `node --check` 구문 검사 통과.
+- 실제 브라우저/모바일 기기에서의 클릭·터치 통합 테스트는 이 환경에서 수행하지 않았습니다.
