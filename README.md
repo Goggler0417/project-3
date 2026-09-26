@@ -1,49 +1,59 @@
-# Tagmark v4.11
+# Tagmark v4.12
 
 ## 이번 버전
-Category Tab의 시각적 UI와 관리 흐름을 v1의 계층형 카테고리 감각 + v4의 Page/Tab 구조에 맞게 복원했습니다.
+Record Tab의 UI를 일반 Record 구조를 유지하면서 v1의 Profile / Character 화면을 재현할 수 있도록 복원했습니다.
 
-### Category Tab
-- 전체폭 계층형 Tree UI
-- Category / 전체 경로 검색
-- 전체 / 사용 중 / 미사용 필터
-- 이름순 / 사용량순 정렬 + 방향 전환
-- Category 직접 사용량 / 하위 포함 사용량 / 자식 수 표시
-- 펼치기 / 접기 및 전체 펼치기 / 전체 접기
-- 각 Category에서 하위 Category 빠른 추가
-- Category 이름 및 부모 수정
-- Tree / 경로 목록 보기 전환
-- 관리 선택 모드
-- 현재 결과 전체 선택 / 선택 해제
-- 선택 Category 부모 일괄 변경
-- 상위/하위 동시 선택 시 최상위 선택 Category만 이동하여 내부 계층 보존
-- 삭제 시 두 방식 지원
-  - 현재 Category만 삭제하고 하위 Category 승격
-  - 하위 트리까지 함께 삭제
-- Bulk 삭제에서도 동일한 안전 규칙 적용
-- 삭제된 Category 참조는 Bookmark / Record 값에서 정리
+### Record Tab
+- Profile / Grid / List 보기 전환
+- v1 Profile 스타일 카드: 이름, 종류/역할, 성별, Series, Tag, 설명, 추가 정보
+- Profile 보기에서 Auto Folder와 결합해 v1의 Series별 접이식 Profile Folder 재현
+- Record별 Bookmark 역참조 개수 표시
+- Record 선택 / Bulk bar
+- 검색, Sort, Filter, Auto Folder, Field/Input, Tab Settings 통합
+- Profile 카드에서 수정 / 복제 / 삭제
+- Tag Head 색상을 사용하는 Tag chip
 
-## 기존 기능
-v4.10까지의 Bookmark Tab, Tag Tab, Record, Folder, Schema/Input, Backup/Restore/Import/Export 등 기존 기능을 유지합니다.
+### ID 기반 Profile 표시 연결
+Tab Settings에서 실제 Input ID를 다음 역할에 연결합니다.
+- 이름
+- 종류/역할
+- 성별
+- Series / 그룹
+- Tag relation
+- 설명
 
-## 테스트
+Input 이름을 바꿔도 연결은 유지됩니다. Record 자체는 Character 전용 데이터가 아니며,
+Profile 보기는 일반 Record 데이터 위에 얹히는 표시 방식입니다.
+
+### v1 Profile 프리셋
+Record Tab Settings의 `v1 Profile 프리셋 적용`을 사용하면:
+- 필요한 Profile용 Input이 없을 때만 생성
+- Profile 보기 활성화
+- Series Input을 Auto Folder 기준으로 연결
+
+### 테스트 Page
+기능 테스트 Page의 Record Tab은 Alice / Bob 샘플 Record를
+v1 Profile 보기 + Series Auto Folder 형태로 바로 확인할 수 있습니다.
+
+## 검증
 - JavaScript syntax 검사 통과
-- 중복 function 선언 0건 확인
-- Headless Chromium DOM 클릭 통합 검사:
-  - Category Tab 진입
-  - Root Category 생성
-  - 하위 Category 생성
-  - Category 수정
-  - 현재 Category만 삭제 후 하위 승격
-  - 선택 모드 / Bulk bar
-  - 부모 일괄 변경 Modal
-  - Tree → 경로 목록 전환
-  - 사용 상태 필터
-  - 검색
-- 390×844 모바일 viewport에서 문서 전체 가로 overflow 없음
-- 위 테스트 중 runtime exception 0건
+- 중복 function 선언 0건
+- Headless Chromium 실제 DOM 클릭 통합 검사 통과
+  - Record Tab 진입
+  - Profile 카드 렌더링
+  - Series Auto Folder
+  - Record 편집 Modal
+  - 선택 / Bulk bar
+  - Profile / Grid / List 전환
+  - Tab Settings Profile Input 연결
+  - v1 Profile 프리셋
+  - Folder 접기/펼치기
+- 390×844 모바일 viewport에서 document 전체 가로 overflow 없음
+- Runtime exception 0건
+- v4.11 형식 Record Tab의 v4.12 설정 마이그레이션 별도 검사 통과
+- 사용자가 명시적으로 비워 둔 Profile 연결값(null)은 마이그레이션이 다시 채우지 않도록 확인
 
 ## 테스트 제한
-실행 환경 정책으로 로컬 파일/localhost에서 실제 IndexedDB를 포함한 브라우저 재시작 영속성 테스트는 수행할 수 없었습니다.
+실행 환경 정책 때문에 실제 IndexedDB를 사용한 브라우저 재시작 영속성 테스트는 수행하지 못했습니다.
 DOM 클릭 통합 검사에서는 저장 계층만 인메모리 방식으로 대체했습니다.
-실제 배포 index.html의 IndexedDB 구현 자체는 변경하지 않았습니다.
+배포 index.html의 IndexedDB 구현 자체는 유지됩니다.
