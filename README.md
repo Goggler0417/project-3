@@ -1,69 +1,49 @@
-# Tagmark v4.10
+# Tagmark v4.11
 
 ## 이번 버전
-v4.09를 기준으로 **Tag Tab의 시각적 UI와 관리 흐름을 v1/v2 계열에 가깝게 복원**한 버전입니다. 다른 데이터 모델이나 Bookmark/Record/Category 구조를 새로 바꾸는 작업은 하지 않았습니다.
+Category Tab의 시각적 UI와 관리 흐름을 v1의 계층형 카테고리 감각 + v4의 Page/Tab 구조에 맞게 복원했습니다.
 
-### Tag Tab UI
-- 전체폭 접이식 **Tag Head 섹션 + Tag chip** 기본 보기
-- 별도 **리스트 보기** 제공
-- Tag 이름과 Tag Head 이름을 함께 검색
-- `전체 / 사용 중 / 미사용` 표시 필터
-- `이름순 / 사용량순 / 최근 생성순` 정렬 및 방향 전환
-- Tag 사용량을 현재 Page의 Bookmark/Record 참조에서 계산하여 표시
-- 미사용 Tag는 흐리게 표시
-- 미사용 필터에서는 각 Tag 옆 `×`로 바로 삭제 가능
+### Category Tab
+- 전체폭 계층형 Tree UI
+- Category / 전체 경로 검색
+- 전체 / 사용 중 / 미사용 필터
+- 이름순 / 사용량순 정렬 + 방향 전환
+- Category 직접 사용량 / 하위 포함 사용량 / 자식 수 표시
+- 펼치기 / 접기 및 전체 펼치기 / 전체 접기
+- 각 Category에서 하위 Category 빠른 추가
+- Category 이름 및 부모 수정
+- Tree / 경로 목록 보기 전환
+- 관리 선택 모드
+- 현재 결과 전체 선택 / 선택 해제
+- 선택 Category 부모 일괄 변경
+- 상위/하위 동시 선택 시 최상위 선택 Category만 이동하여 내부 계층 보존
+- 삭제 시 두 방식 지원
+  - 현재 Category만 삭제하고 하위 Category 승격
+  - 하위 트리까지 함께 삭제
+- Bulk 삭제에서도 동일한 안전 규칙 적용
+- 삭제된 Category 참조는 Bookmark / Record 값에서 정리
 
-### 통합 Tag 입력
-- v1 계열처럼 하나의 입력창에서 Tag 생성
-- 여러 Tag Head를 동시에 선택하여 같은 이름의 Tag를 각 Head에 한 번에 등록 가능
-- 선택한 Head 상태는 해당 Tag Tab 설정에 저장되며 등록 후에도 유지
-- Tag 이름 입력값은 Head 선택 변경 때문에 사라지지 않도록 Runtime draft로 유지
-- 각 Tag Head의 `＋` 버튼은 통합 입력창을 해당 Head에 맞춰 바로 준비
+## 기존 기능
+v4.10까지의 Bookmark Tab, Tag Tab, Record, Folder, Schema/Input, Backup/Restore/Import/Export 등 기존 기능을 유지합니다.
 
-### Tag 관리
-- Tag chip 클릭은 관리 선택으로 동작
-- 단일 선택 시 수정 가능
-- 선택 Tag 일괄 Head 이동
-- 선택 Tag 일괄 색상 변경
-- `Head 색 사용`으로 개별 Tag 색상 override 제거 가능
-- Tag Head 이름/색상 수정
-- Tag Head 순서 ↑/↓ 변경
-- Tag Head 삭제는 기존 v4 방식 유지:
-  - 소속 Tag를 다른 Head로 이동 후 Head 삭제
-  - 또는 Head + 소속 Tag 함께 삭제
-- 삭제된 Head가 통합 입력창 선택 상태에 남지 않도록 정리
+## 테스트
+- JavaScript syntax 검사 통과
+- 중복 function 선언 0건 확인
+- Headless Chromium DOM 클릭 통합 검사:
+  - Category Tab 진입
+  - Root Category 생성
+  - 하위 Category 생성
+  - Category 수정
+  - 현재 Category만 삭제 후 하위 승격
+  - 선택 모드 / Bulk bar
+  - 부모 일괄 변경 Modal
+  - Tree → 경로 목록 전환
+  - 사용 상태 필터
+  - 검색
+- 390×844 모바일 viewport에서 문서 전체 가로 overflow 없음
+- 위 테스트 중 runtime exception 0건
 
-### 표시 색상
-- Tag Head에 색상을 저장
-- Tag는 기본적으로 소속 Head 색상을 사용
-- 필요할 경우 Tag별 개별 색상 override 가능
-- 테스트 Page의 Head에도 구분 가능한 샘플 색상 포함
-
-### 기타 수정
-- 브라우저 inline event handler에서 `body()` 이름이 HTML `body`와 충돌할 수 있는 문제를 확인하여 내부 화면 갱신 함수를 `renderBody()`로 정리했습니다.
-- 기존 테스트 Page는 계속 Bookmark / Record / Tag / Category / Folder 샘플 데이터를 포함합니다.
-
-## 이번에 보류한 항목
-v1의 `중립 → 포함 → 제외 → 중립` Tag filter UI는 이번 Tag Tab 복원에는 노출하지 않았습니다. v4에서는 Filter가 Tab별 설정이므로, 향후 **Bookmark Tab에서 여는 Tag Filter modal**의 의미와 대상 Relation Input을 확정한 뒤 넣는 편이 버그 위험이 낮습니다.
-
-## 확인한 테스트
-- JavaScript syntax check 통과
-- 중복 함수 선언 0건
-- Headless Chromium DOM 클릭 테스트 통과:
-  - Bookmark 검색
-  - Tag Tab 진입
-  - 기본 Tag/Head 렌더링
-  - 통합 입력 Head 선택 유지
-  - 입력 중 Head 선택 변경 시 draft 유지
-  - 다중 Head Tag 생성
-  - 미사용 Tag 즉시 삭제
-  - Tag 선택/Bulk bar
-  - 색상 일괄 변경
-  - Head 일괄 이동
-  - 시각화/리스트 전환
-  - Tag Head 이름 검색
-  - Record/Category Tab 이동 smoke test
-- 모바일 390×844 기준 document horizontal overflow 없음
-
-### 테스트 제한
-현재 실행 환경은 로컬 파일 URL 접근이 브라우저 정책으로 차단되어 있으므로, Chromium 통합 테스트에서는 IndexedDB 계층만 인메모리 테스트 저장으로 대체했습니다. 실제 UI/DOM event와 Controller 동작은 Chromium에서 실행했지만, 실제 IndexedDB에 저장한 뒤 브라우저를 완전히 재시작하는 영속성 테스트까지 수행한 것은 아닙니다.
+## 테스트 제한
+실행 환경 정책으로 로컬 파일/localhost에서 실제 IndexedDB를 포함한 브라우저 재시작 영속성 테스트는 수행할 수 없었습니다.
+DOM 클릭 통합 검사에서는 저장 계층만 인메모리 방식으로 대체했습니다.
+실제 배포 index.html의 IndexedDB 구현 자체는 변경하지 않았습니다.
