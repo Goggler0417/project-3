@@ -1,71 +1,41 @@
-# Tagmark v4.23
+# Tagmark v4.24
 
-v4.22의 컴팩트 Field 편집기를 바탕으로, 사용자에게 보이는 개념과 명칭을 다시 정리한 버전입니다.
+이번 수정은 탭 설정 단순화, Record/Bookmark 보기 방식 정리, 선택 툴바 축소, 표시 구성 drag & drop 교체에 초점을 맞췄습니다.
 
-## 핵심 변경
+## 변경사항
 
-- 표시 유형의 `Profile` 명칭을 `Record`로 통일
-- Field 편집의 `정보 유형 + 입력 방식 + 표시 유형` 3축을 `정보 형식 + 표시 방식` 중심으로 단순화
-- 정보 형식은 6개 개념군으로 묶음
-  - Text: 한 줄 / 여러 줄 / URL
-  - Number: 숫자 / 시간 길이
-  - Date & Time: 날짜 / 날짜+시간
-  - Boolean: 예/아니오
-  - Choice: 드롭다운 / 라디오 / 체크박스(복수 선택) / 순환 버튼
-  - Relation: Tag / Record / Category — 모두 같은 검색/선택 UI를 사용하고 대상만 다름
-- 표시 방식은 Title / Item / Tag / Memo / Record 체계 유지
-- 기존 `Hidden` 표시가 있는 데이터는 호환을 위해 `표시 안 함 (기존 설정)`으로만 노출
+- 표시 구성 drag & drop을 HTML5 `draggable` 기반에서 Pointer Events 기반으로 교체
+  - 영역 순서 이동
+  - 같은 영역 안 표시 위치 이동
+  - 다른 영역으로 표시 위치 이동
+  - 빈 영역으로 이동
+  - drag 중 실제 삽입 위치 표시
+  - 모달 가장자리에서 자동 스크롤
+- Record 보기 방식 정리
+  - 기존 Record 카드 보기를 `그리드`로 통일
+  - 별도 일반 격자 보기는 제거
+  - `그리드 / 목록` 두 상태만 순환 버튼으로 전환
+- Bookmark 보기 방식
+  - 탭 메인에 `보기 · 그리드 / 목록` 순환 버튼 배치
+- 선택 툴바 축소
+  - Bookmark / Record / Tag / Category 선택 툴바 공통 축소
+  - 버튼 높이·패딩·글자 크기를 기존 일반 버튼보다 작게 조정
+- 탭 설정 단순화
+  - Bookmark/Record 카드의 정보 연결 설정 제거
+  - 카드에 무엇을 어떻게 보여줄지는 `표시 구성`에서 관리하도록 정리
+  - Bookmark 탭 설정에는 폴더 제목 아래 요약 정보만 유지
+  - Tag 탭 설정에는 표시할 태그 그룹 설정 유지
+- 기존 DB 호환성 유지
+  - 이전 `recordPresentation`, convenience 매핑 값은 내부 호환 목적으로 유지할 수 있으나 탭 설정에서 노출하지 않음
 
-## 작명 정리
+## 정적 QA
 
-내부 데이터 키와 ID 구조는 그대로 유지하면서 사용자 UI만 더 직관적으로 바꿨습니다.
+- VERSION: 4.24
+- JavaScript syntax: 통과
+- 중복 named function: 없음
+- native `prompt() / alert() / confirm()`: 없음
+- HTML5 `draggable=`: 없음
+- 표시 구성 drag handle은 Pointer Events 사용
+- Bookmark/Record 탭 설정에서 Record 표시 정보 매핑 UI 제거 확인
 
-- Field → 영역 / 표시 영역
-- Input → 정보 항목
-- Placement → 표시 위치
-- Field / Input → 표시 구성
-- Input Library → 전체 정보 항목
-- Tag Head → 태그 그룹
-- Auto Folder → 값별 자동 그룹
-- Tab Settings → 탭 설정
-- Sort / Filter → 정렬 / 필터
-- Profile 보기/표시 → Record 카드
-
-## 고급 표시 설정
-
-기존의 추상적인 이름을 기능이 바로 드러나도록 변경했습니다.
-
-- `Field 배치` → `영역 안 항목 배치`
-  - `세로로 한 항목씩`
-  - `한 줄에 나란히`
-- `라벨` → `항목 이름 표시`
-  - `표시하지 않음`
-  - `값 위에 표시`
-  - `값 앞에 표시`
-- `규칙` → `언제 표시할지`
-  - `항상 표시`
-  - `값이 지정한 값과 같을 때만`
-  - `값에 지정한 내용이 들어 있을 때만`
-  - Tag 정보에서는 `선택한 태그 그룹의 태그만 표시`
-- `규칙 값` → 조건에 따라 `같아야 하는 값` / `포함해야 하는 내용`
-- `접두` → `값 앞에 붙일 글자`
-- `접미` → `값 뒤에 붙일 글자`
-
-## 호환성
-
-- DB format과 IndexedDB 이름은 v4.22와 동일
-- 기존 Relation / Field / Placement / Input 내부 구조 유지
-- 같은 정보 항목을 여러 표시 위치에서 참조하는 구조 유지
-- 기존 distribution 데이터는 UI에서는 숨기지만 레거시 렌더링 호환을 위해 내부적으로 유지
-- Choice 선택지 삭제에 대한 파괴적 새 동작은 추가하지 않음
-
-## QA
-
-- JavaScript syntax 검사 통과
-- 중복 named function 0
-- native prompt / alert / confirm 0
-- Field/Placement drag & drop 함수 유지 확인
-- 표시 구성에서 별도 입력 방식 dropdown 제거 확인
-- `Tag Head =`, `값 =`, `접두`, `접미`, `라벨`, `규칙` 등의 추상적 UI 문구 제거
-- 데스크톱 및 390px 모바일 폭에서 표시 구성 modal 가로 overflow 0 확인
-- 브라우저 스텁 환경에서 초기 렌더 + 표시 구성 modal runtime error 0 확인
+브라우저 자동화 환경에서는 로컬 파일/localhost 실행이 관리자 정책에 의해 차단되어 실제 포인터 제스처 기반 runtime QA는 수행하지 못했습니다. 실제 브라우저에서 마우스/트랙패드/iPad 터치로 최종 확인이 권장됩니다.
