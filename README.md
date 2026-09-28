@@ -1,15 +1,15 @@
-# Tagmark v4.20
+# Tagmark v4.22
 
-v4.19 기능/데이터 구조는 유지하고 시각 표현만 v1/v2 계열로 더 단순화한 버전입니다.
+Field 편집을 3축 드롭다운 중심으로 다시 단순화한 버전입니다.
 
-주요 변경
-- 페이지/테스트용 이모지 및 장식 아이콘 표시 제거
-- 카드/패널 그림자와 과한 둥근 모서리 축소
-- Main/Page/Bookmark/Tag/Category/Record 화면 밀도 조정
-- Tag Head/Tag의 장식 점 제거, 기존 pill 표현은 더 옅게 유지
-- Modal을 v1/v2처럼 한 장의 흰 대화상자에 가까운 형태로 단순화
-- Field/Input 설정의 중첩 박스를 평평하게 정리
-- 아이콘형 작업 버튼을 가능한 범위에서 텍스트형 버튼으로 변경
-- 모바일 390px 폭에서 가로 overflow 없음 확인
+- Tag Head 앞 장식 점 markup 제거
+- Field/Placement 순서 변경 버튼 제거
+- Field와 Placement 순서는 drag & drop으로 변경
+- Placement 기본 행은 Input / 정보 유형 / 입력 방식 / 표시 유형으로 한 줄 구성
+- 정보 유형은 Value(Text/Long Text/Number/Boolean/URL/Date/DateTime/Duration/Choice), Tag, Profile/Record, Category 지원
+- 입력 방식과 표시 유형은 정보 유형에 맞는 후보만 노출
+- 같은 Input 분배 설정 UI 제거 (기존 레거시 데이터는 호환을 위해 내부적으로 보존)
+- Label / Rule / Prefix / Suffix는 고급 설정 안에만 유지
+- 저장 값이 있는 Input은 정보 유형 변경 잠금
 
-DB format, IndexedDB 이름, 데이터 schema는 v4.19와 동일합니다.
+DB format과 IndexedDB 이름은 유지됩니다.
