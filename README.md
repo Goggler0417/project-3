@@ -1,39 +1,31 @@
-# Tagmark v4.26
+# Tagmark v4.27
 
-Record 입력기를 `Relation · Record` 기반의 범용 입력기로 확장한 버전입니다.
+## 핵심 변경
 
-## 주요 변경
+- `Relation · Record`에 **Record 박스 · v1 Profile 방식** 입력 모드를 추가했습니다.
+- Record 박스는 Bookmark/Record 수정 모달 안에서 선택된 Record마다 독립 박스를 표시합니다.
+- v1 슬롯을 `이름 / 종류·역할 / 성별 / Series / Tag`로 직접 연결할 수 있습니다.
+- 박스별 체크박스, 삭제, 정보 새로고침, 선택 복사, 붙여넣기를 지원합니다.
+- Record 검색 및 검색 결과에서 새 이름을 바로 등록할 수 있고, Record 박스 모드에서는 같은 입력 영역 안에 빠른 등록 폼이 펼쳐집니다.
+- 새 Record 등록 폼, 검색 보조 정보, Bookmark 자동 채우기 설정은 기존 v4.26 기능을 유지합니다.
+- 자동 채우기는 기존 사용자가 입력한 값을 덮어쓰지 않으며, Record 연결 자체는 원본 Record를 실시간 참조합니다.
 
-- Record 유형을 Record Schema 기준으로 구분합니다.
-- 각 Record는 자신이 속한 `schemaId`를 보존합니다.
-- `Relation · Record` 정보 항목에서 불러올 Record 유형을 지정할 수 있습니다.
-- Record 검색 결과는 지정된 Record 유형만 표시합니다.
-- 기존 Record 검색/단일·복수 선택/제거 기능을 유지합니다.
-- 검색어와 같은 새 Record를 현재 Bookmark 입력 중 바로 등록할 수 있습니다.
-- 새 Record 등록 폼은 해당 Record Schema의 정보 항목을 불러옵니다.
-- 표시 구성 > 고급 > `Record 입력 설정`에서 다음을 조정할 수 있습니다.
-  - 불러올 Record 유형
-  - 단일/복수 선택
-  - 새 Record 즉시 등록 허용 여부
-  - 새 Record 등록 폼에 보여줄 정보
-  - 검색 결과/선택 카드에 보여줄 보조 정보
-  - Record 정보 → Bookmark 정보 자동 채우기 대상
-- 선택한 Record는 이름만 있는 chip 대신 유형과 보조 정보가 포함된 작은 Record 블록으로 표시됩니다.
-- Bookmark에서 Record를 선택하면 설정된 정보를 빈 Bookmark 입력칸에 자동으로 복사합니다.
-- 같은 Input을 Bookmark와 Record Schema가 공유하면 별도 매핑 없이 같은 Input으로 자동 채웁니다.
-- 기존 사용자가 직접 입력한 값은 자동으로 덮어쓰지 않습니다.
-- 자동으로 채운 값의 출처를 Bookmark 내부 metadata로 보존합니다.
-- `정보 다시 불러오기`로 해당 Record의 최신 정보를 수동 재적용할 수 있습니다.
-- Record 연결을 해제해도 이미 Bookmark에 복사된 다른 정보는 자동 삭제하지 않습니다.
-- 기존 v4 Record는 로드 시 기존 기본 Record Schema에 안전하게 귀속됩니다.
-- Bookmark의 기존 Character/Cast 전용 빠른 추가 버튼은 Record 입력기에서 대체됩니다.
+## 테스트 파일
 
-## QA
+`test.html`은 v4.27 전용 별도 IndexedDB(`tagmark-v427-test`)를 사용하므로 일반 `index.html` 데이터와 분리됩니다.
 
-- JavaScript `node --check` 통과
-- 중복 named function 0
-- native `prompt / alert / confirm` 0
-- HTML5 `draggable=true` 0
-- Record Schema별 검색 필터 및 legacy Record type migration 로직 테스트 통과
+테스트하기 좋은 순서:
 
-브라우저 실행 기반 QA는 현재 실행 환경의 로컬 페이지 접근 제한 때문에 수행하지 못했습니다. Mac/iPad의 실제 브라우저에서 Record 검색, 새 Record 등록, 자동 채우기 흐름을 한 번 최종 확인하는 것이 좋습니다.
+1. `test.html`을 열고 **북마크** 탭에서 `테스트 북마크 C`를 수정합니다. Alice/Bob이 v1형 Record 박스로 표시되는지 확인합니다.
+2. Record 박스의 체크박스를 사용해 **선택 복사 → 붙여넣기**를 확인합니다.
+3. 검색창에 새 이름을 입력하고 `＋ “이름” 새 Record 등록`을 눌러, 모달 안 Record 박스 영역에서 등록 폼이 펼쳐지는지 확인합니다.
+4. 새/기존 Record를 선택했을 때 Bookmark의 `성별`, `Series`, `태그` 빈 칸이 자동으로 채워지는지 확인합니다. 기존 값은 덮어쓰지 않아야 합니다.
+5. **표시 구성 → 관련 Record → 고급 → Record 입력 설정**에서 `일반 검색`과 `Record 박스 · v1 Profile 방식`을 전환하고 v1 슬롯 연결을 바꿔봅니다.
+
+## 파일
+
+- `index.html`: 일반 사용용 v4.27
+- `test.html`: v4.27 기능 시험용, 별도 DB 사용
+- `README.md`: 변경사항 및 테스트 가이드
+
+> 일반 빌드의 IndexedDB 이름 `tagmark-v400`은 기존 데이터 호환을 위해 의도적으로 유지합니다. 앱 버전 표시는 모두 v4.27입니다.
