@@ -1,4 +1,4 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Tagmark v4.33</title>
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Tagmark v4.34</title>
 <style>
 :root{--bg:#f5f7fb;--panel:#fff;--line:#dfe5ee;--text:#17202b;--muted:#6d7785;--accent:#315efb;--danger:#c93d3d;--side:#111827;--side2:#26344d}*{box-sizing:border-box}html,body,#app{margin:0;height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);background:var(--bg)}button,input,select,textarea{font:inherit}button{border:1px solid var(--line);background:#fff;border-radius:9px;padding:8px 11px;cursor:pointer}.primary{background:var(--accent);color:#fff;border-color:var(--accent)}.danger{color:var(--danger)}.app{display:flex;height:100%}.side{width:245px;background:var(--side);color:#fff;padding:16px;display:flex;flex-direction:column;gap:10px}.brand{font-weight:800;font-size:20px}.ver{color:#9ca3af;font-size:12px}.side button{background:#1f2937;color:#fff;border-color:#374151}.pages{display:flex;flex-direction:column;gap:5px;overflow:auto}.pitem{padding:10px;border-radius:8px;cursor:pointer}.pitem.on{background:var(--side2)}.main{flex:1;min-width:0;overflow:auto}.top{height:58px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:9px 16px;position:sticky;top:0;z-index:10}.content{padding:20px}.head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.muted{color:var(--muted);font-size:13px}.tabs,.toolbar,.actions{display:flex;gap:7px;flex-wrap:wrap}.tabs{border-bottom:1px solid var(--line);margin:16px 0 12px}.tab{border:0;background:transparent;border-radius:8px 8px 0 0;padding:10px 13px;color:var(--muted)}.tab.on{background:#fff;color:var(--accent);border:1px solid var(--line);border-bottom-color:#fff;margin-bottom:-1px}.toolbar{margin-bottom:12px}.toolbar input{min-width:240px;padding:9px;border:1px solid var(--line);border-radius:8px}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:11px}.list{display:flex;flex-direction:column;gap:8px}.card,.folder,.pagecard{background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px}.card.sel{outline:2px solid #315efb66}.pagecard{cursor:pointer}.card h3,.pagecard h3{margin:0 0 8px}.chips{display:flex;gap:4px;flex-wrap:wrap}.chip{font-size:12px;background:#eef1f6;border-radius:999px;padding:4px 7px}.empty{background:#fff;border:1px dashed var(--line);border-radius:12px;padding:40px;text-align:center;color:var(--muted)}.field{margin-top:8px}.fname{font-size:11px;color:var(--muted)}.modalback{position:fixed;inset:0;background:#0007;display:flex;align-items:center;justify-content:center;padding:15px;z-index:100}.modal{background:#fff;border-radius:14px;padding:18px;width:min(760px,100%);max-height:90vh;overflow:auto}.modal h2{margin:0 0 14px}.form{display:grid;gap:10px}.form label{font-size:13px;font-weight:650}.form input,.form select,.form textarea{width:100%;padding:9px;border:1px solid var(--line);border-radius:8px}.foot{display:flex;justify-content:flex-end;gap:7px;margin-top:15px}.row{display:grid;grid-template-columns:1fr 1fr auto;gap:7px;align-items:center}.notice{background:#eef3ff;border-radius:9px;padding:10px;font-size:13px}.selectbar{background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px;display:flex;gap:7px;align-items:center;margin-bottom:10px}.folderhead{display:flex;justify-content:space-between;align-items:center}.folderbody{margin-top:9px}.sys{margin-top:auto}.status{margin-left:auto;font-size:12px;color:var(--muted)}
 @media(max-width:720px){.side{width:170px}.content{padding:12px}.grid{grid-template-columns:1fr}.row{grid-template-columns:1fr}.toolbar input{min-width:140px;flex:1}}
@@ -519,9 +519,9 @@ input:not([type=checkbox]):not([type=radio]):not([type=color]):focus,select:focu
 /* v4.32 embedded Record editor */
 .rc-card{border:1px solid var(--line);border-radius:9px;padding:10px;display:grid;gap:8px;background:#fafbfc;min-width:0}.rc-list{display:grid;gap:10px}.rc-head,.rc-foot,.rc-toolbar,.rc-search{display:flex;gap:7px;align-items:center;flex-wrap:wrap}.rc-head .muted,.rc-foot .muted{flex:1}.rc-head .check{display:flex;align-items:center;gap:6px;margin:0}.rc-card input[type=checkbox],.rc-card input[type=radio]{width:16px!important;min-height:16px!important;height:16px!important;flex:none!important;padding:0!important}.rc-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.rc-field{min-width:0;display:grid;align-content:start;gap:5px}.rc-field input:not([type=checkbox]):not([type=radio]),.rc-field textarea,.rc-field select{width:100%;min-width:0;box-sizing:border-box}.rc-label{font-weight:600;font-size:12px}.rc-options,.rc-chips{display:flex;flex-wrap:wrap;gap:5px;max-height:130px;overflow:auto}.rc-options button{font-size:12px;min-height:26px;padding:3px 7px}.rc-search input{flex:1;min-width:90px}.rc-toolbar{border-top:1px solid var(--line);padding-top:8px}.rc-editor-label{font-weight:650}.rc-type-list{display:grid;gap:6px;padding-top:8px}.rc-type-list .check{display:flex;gap:6px}.rc-display{padding:5px 0}.rc-display summary{cursor:pointer;display:list-item}.rc-display summary>span{margin-right:8px}.rc-detail{padding:8px 10px;border-left:2px solid var(--line);margin-top:5px;display:grid;gap:7px}.rc-detail-row{display:flex;gap:8px;font-size:12px;flex-wrap:wrap}.rc-detail-row>b{color:var(--muted)}.rc-display:not([open])>.rc-detail{display:none}.rc-foot{font-size:11px;border-top:1px solid var(--line);padding-top:7px}@media(max-width:760px){.rc-fields{grid-template-columns:1fr}.rc-head{align-items:flex-start}.rc-search{width:100%}.rc-card{padding:8px}}
 .schema-field-head{display:grid!important}.schema-field-head .field-delete{display:inline-flex!important}.schema-add-placement{width:auto;min-height:32px;margin:7px!important}
-</style></head><body><div id="app"></div><script>
+.entity-field-group{border:1px solid #cbd9f2;border-radius:10px;padding:10px 12px;margin:8px 0;background:#f8faff;display:grid;gap:10px;min-width:0}.entity-field-group legend{font-weight:750;color:#34518a;padding:0 5px}.entity-field-group>label{min-width:0}@media(max-width:760px){.entity-field-group{padding:8px}}</style></head><body><div id="app"></div><script>
 'use strict';
-const VERSION='4.33',FORMAT=1,DBNAME='tagmark-v428-test',STORE='current',RECOVERY_KEY='recovery-last-v428-test';
+const VERSION='4.34',FORMAT=1,DBNAME='tagmark-v428-test',STORE='current',RECOVERY_KEY='recovery-last-v428-test';
 const C=x=>structuredClone(x), E=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 const pref={page:'p',tab:'x',schema:'s',field:'g',placement:'q',input:'i',bookmark:'b',record:'r',tag:'t',tagHead:'h',category:'c',folder:'f'};
 let db,idb; const rt={pageId:null,tabId:null,search:'',searchScope:'all',quickCategoryId:'',selected:new Set(),select:false,undo:[],redo:[],save:'saved',recordClipboard:[],collapsedFolders:new Set(),collapsedTagHeads:new Set(),collapsedRecordGroups:new Set(),tagDraftName:'',mainSearch:'',sideOpen:false,recoveryMode:false,recoveryIssues:[],hasRecoverySnapshot:false,bootNotice:'',lastError:'',recordAutoFillDraft:{},autoFillApplying:false,entityEditingType:null};
@@ -742,7 +742,7 @@ function refreshInputTypeControls(prefix){const root=document.getElementById(pre
 function kindFromInput(inp){if(inp?.type==='relation'&&inp.target==='tag')return'tag';if(inp?.type==='relation'&&inp.target==='record')return'profile';if(inp?.type==='relation'&&inp.target==='category')return'category';return'value'}
 function inputSpecFromControls(prefix){const kind=document.getElementById(prefix+'Kind')?.value||'value',sub=document.getElementById(prefix+'Subtype')?.value||'text',multiple=!!document.getElementById(prefix+'Multiple')?.checked,choices=(document.getElementById(prefix+'Choices')?.value||'').split(',').map(x=>x.trim()).filter(Boolean);if(kind==='tag')return{type:'relation',target:'tag',multiple,choices:[]};if(kind==='profile')return{type:'relation',target:'record',multiple,choices:[]};if(kind==='category')return{type:'relation',target:'category',multiple,choices:[]};return{type:sub,target:null,multiple:false,choices:sub==='choice'?choices:[]}}
 function editor(inp,v,pl=null){const method=pl?.editor?.method||'auto';if(inp.type==='relation')return method==='select'?nativeRelationSelect(inp,v):relationPickerHtml(inp,v,pl);if(inp.type==='duration')return `<label>${E(inp.name)}</label>${durationEditor(inp,v,true)}`;if(inp.type==='boolean'){const val=v===true||v==='true'||v===1||v==='1'?'true':v===false||v==='false'||v===0||v==='0'?'false':'';return `<label>${E(inp.name)}<input type="hidden" data-i="${inp.id}" value="${val}"><span class="editor-checks"><label><input type="checkbox" data-bool-i="${inp.id}" ${val==='true'?'checked':''}> 예</label></span></label>`}const methodNow=normalizedEditorMethod(inp,pl);if(inp.type==='choice'){const opts=choiceOptions(inp);if(methodNow==='radio')return radioEditor(inp,v,opts);if(methodNow==='cycle')return cycleEditor(inp,v,opts);if(methodNow==='checkboxes')return choiceChecksEditor(inp,v);return `<label>${E(inp.name)}<select data-i="${inp.id}" ${inp.multiple?'multiple':''}>${!inp.multiple?'<option value="">선택 없음</option>':''}${opts.map(x=>`<option value="${E(x)}" ${(Array.isArray(v)?v:[v]).includes(x)?'selected':''}>${E(x)}</option>`).join('')}</select></label>`}const multiline=methodNow==='textarea'||inp.type==='longtext',typ=inp.type==='number'?'number':inp.type==='date'?'date':inp.type==='datetime'?'datetime-local':inp.type==='url'?'url':'text';return `<label>${E(inp.name)}${multiline?`<textarea data-i="${inp.id}">${E(v||'')}</textarea>`:`<input data-i="${inp.id}" type="${typ}" value="${E(v??'')}">`}</label>`}
-function saveEntity(id){const t=curt(),p=page(),col=t.type==='bookmark'?p.bookmarks:p.records;tx(id?'Entity 편집':'Entity 생성',()=>{const e=id?col[id]:{id:alloc(p,t.type),values:{},createdAt:Date.now()};for(const cb of document.querySelectorAll('#modal [data-bool-i]')){const hidden=document.querySelector(`#modal [data-i="${cb.dataset.boolI}"]`);if(hidden)hidden.value=cb.checked?'true':'false'}for(const el of document.querySelectorAll('#modal [data-i]')){const inp=p.inputs[el.dataset.i];if(!inp)continue;let v;if(el.tagName==='SELECT')v=inp.multiple?[...el.selectedOptions].map(o=>o.value):el.value;else v=el.value;if(inp.type==='boolean'&&v!=='')v=v==='true';if((inp.type==='number'||inp.type==='duration')&&v!==''){v=Number(v);if(!Number.isFinite(v))throw Error(inp.name+' 값이 올바른 숫자가 아닙니다.')}if(v===''||(Array.isArray(v)&&!v.length))delete e.values[inp.id];else e.values[inp.id]=v}if(t.type==='bookmark'){const f=document.getElementById('folderId')?.value||'';if(f)e.folderId=f;else delete e.folderId;const af=rt.recordAutoFillDraft||{};if(Object.keys(af).length)e.autoFill=C(af);else delete e.autoFill}else if(t.type==='record')e.schemaId=t.schemaId;e.recordEntries=C(r432.draft);for(const [iid,entries] of Object.entries(e.recordEntries)){const inp=p.inputs[iid];if(inp?.target!=='record')continue;inp.multiple=true;const ids=[...new Set(entries.map(c=>c.recordId).filter(rid=>p.records[rid]))];if(ids.length)e.values[iid]=inp.multiple?ids:ids[0];else delete e.values[iid]}e.updatedAt=Date.now();if(!id)col[e.id]=e});rt.entityEditingType=null;rt.recordAutoFillDraft={};closeModal()}
+function saveEntity(id){const t=curt(),p=page(),col=t.type==='bookmark'?p.bookmarks:p.records;tx(id?'Entity 편집':'Entity 생성',()=>{const e=id?col[id]:{id:alloc(p,t.type),values:{},createdAt:Date.now()};for(const cb of document.querySelectorAll('#modal [data-bool-i]')){const hidden=document.querySelector(`#modal [data-i="${cb.dataset.boolI}"]`);if(hidden)hidden.value=cb.checked?'true':'false'}for(const el of document.querySelectorAll('#modal [data-i]')){const inp=p.inputs[el.dataset.i];if(!inp)continue;let v;if(el.tagName==='SELECT')v=inp.multiple?[...el.selectedOptions].map(o=>o.value):el.value;else v=el.value;if(inp.type==='boolean'&&v!=='')v=v==='true';if((inp.type==='number'||inp.type==='duration')&&v!==''){v=Number(v);if(!Number.isFinite(v))throw Error(inp.name+' 값이 올바른 숫자가 아닙니다.')}if(v===''||(Array.isArray(v)&&!v.length))delete e.values[inp.id];else e.values[inp.id]=v}if(t.type==='bookmark'){const f=document.getElementById('folderId')?.value||'';if(f)e.folderId=f;else delete e.folderId;const af=rt.recordAutoFillDraft||{};if(Object.keys(af).length)e.autoFill=C(af);else delete e.autoFill}else if(t.type==='record')e.schemaId=t.schemaId;e.autoRoutedTags=C(r434.autoTags);e.recordEntries=C(r432.draft);for(const [iid,entries] of Object.entries(e.recordEntries)){const inp=p.inputs[iid];if(inp?.target!=='record')continue;inp.multiple=true;const ids=[...new Set(entries.map(c=>c.recordId).filter(rid=>p.records[rid]))];if(ids.length)e.values[iid]=inp.multiple?ids:ids[0];else delete e.values[iid]}e.updatedAt=Date.now();if(!id)col[e.id]=e});rt.entityEditingType=null;rt.recordAutoFillDraft={};closeModal()}
 function deleteOne(id){const t=curt(),p=page();tx('Entity 삭제',()=>{delete (t.type==='bookmark'?p.bookmarks:p.records)[id];for(const x of [...Object.values(p.bookmarks),...Object.values(p.records)])for(const [iid,v] of Object.entries(x.values||{})){const inp=p.inputs[iid];if(inp?.type==='relation'&&inp.target===t.type){if(Array.isArray(v)){x.values[iid]=v.filter(z=>z!==id);if(!x.values[iid].length)delete x.values[iid]}else if(v===id)delete x.values[iid]}}});closeModal()}
 function bulkDelete(){const ids=[...rt.selected];if(!ids.length)return;modal('선택 항목 삭제',`<div class="notice">${ids.length}개 항목을 삭제합니다. 연결된 참조는 안전하게 정리합니다.</div>`,`<button onclick="closeModal()">취소</button><button class="danger" onclick="confirmBulkDelete()">삭제</button>`)}function confirmBulkDelete(){const t=curt(),p=page(),ids=[...rt.selected];tx('Bulk 삭제',()=>{if(t.type==='bookmark'||t.type==='record'){const col=t.type==='bookmark'?p.bookmarks:p.records;for(const id of ids){delete col[id];for(const x of [...Object.values(p.bookmarks),...Object.values(p.records)])for(const [iid,v] of Object.entries(x.values||{})){const inp=p.inputs[iid];if(inp?.type==='relation'&&inp.target===t.type){if(Array.isArray(v)){x.values[iid]=v.filter(z=>z!==id);if(!x.values[iid].length)delete x.values[iid]}else if(v===id)delete x.values[iid]}}}}else if(t.type==='tag'){detachTagRefs(ids);for(const id of ids)delete p.tags[id]}else{const set=new Set(ids);for(const id of ids){const par=p.categories[id]?.parentId;for(const c of Object.values(p.categories))if(c.parentId===id&&!set.has(c.id)){if(par&&!set.has(par))c.parentId=par;else delete c.parentId}delete p.categories[id]}for(const e of [...Object.values(p.bookmarks),...Object.values(p.records)])for(const [iid,v] of Object.entries(e.values||{})){const inp=p.inputs[iid];if(inp?.type!=='relation'||inp.target!=='category')continue;if(Array.isArray(v)){e.values[iid]=v.filter(x=>!set.has(x));if(!e.values[iid].length)delete e.values[iid]}else if(set.has(v))delete e.values[iid]}}});rt.selected.clear();closeModal()}
 
@@ -1114,7 +1114,7 @@ function detachTagRefs(ids){const p=page(),set=new Set(ids);for(const e of [...O
 function deleteHeadFlow(id){const p=page(),h=p.tagHeads[id];if(!h)return;const tags=Object.values(p.tags).filter(t=>t.headId===id),others=p.tagHeadOrder.filter(x=>x!==id&&p.tagHeads[x]);closeModal();modal('태그 그룹 삭제',`<div class="form"><div class="notice">${E(h.name)} · Tag ${tags.length}개</div>${tags.length&&others.length?`<label>Tag 이동 대상<select id="headMoveTo">${others.map(x=>`<option value="${x}">${E(p.tagHeads[x].name)}</option>`).join('')}</select></label><button onclick="deleteHeadMove('${id}')">Tag 이동 후 Head 삭제</button>`:''}<button class="danger" onclick="deleteHeadAndTags('${id}')">Head와 소속 Tag 함께 삭제</button></div>`,`<button onclick="closeModal()">취소</button>`)}
 function deleteHeadMove(id){const to=document.getElementById('headMoveTo')?.value;if(!to)return toast('이동할 Head가 없습니다.');tx('태그 그룹 삭제/이동',()=>{const p=page();for(const x of Object.values(p.tags))if(x.headId===id)x.headId=to;for(const tab of Object.values(p.tabs||{}))if(tab.type==='tag'){if(Array.isArray(tab.tagCreateHeadIds))tab.tagCreateHeadIds=[...new Set(tab.tagCreateHeadIds.map(x=>x===id?to:x))];if(Array.isArray(tab.visibleTagHeadIds))tab.visibleTagHeadIds=[...new Set(tab.visibleTagHeadIds.map(x=>x===id?to:x))]}delete p.tagHeads[id];p.tagHeadOrder=p.tagHeadOrder.filter(x=>x!==id)});closeModal()}
 function deleteHeadAndTags(id){tx('태그 그룹 + Tag 삭제',()=>{const p=page(),ids=Object.values(p.tags).filter(t=>t.headId===id).map(t=>t.id);detachTagRefs(ids);for(const tid of ids)delete p.tags[tid];for(const tab of Object.values(p.tabs||{}))if(tab.type==='tag'){if(Array.isArray(tab.tagCreateHeadIds))tab.tagCreateHeadIds=tab.tagCreateHeadIds.filter(x=>x!==id);if(Array.isArray(tab.visibleTagHeadIds))tab.visibleTagHeadIds=tab.visibleTagHeadIds.filter(x=>x!==id)}delete p.tagHeads[id];p.tagHeadOrder=p.tagHeadOrder.filter(x=>x!==id)});closeModal()}
-function createDemoPage(){closeModal();let pid;tx('테스트 Page 생성',()=>{pid=makeTestPage(db,VERSION);db.meta.testSeedInitialized=true});if(pid){rt.pageId=pid;rt.tabId=db.pages[pid].tabOrder[0]||null;rt.selected.clear();rt.search='';render();toast('간편 필드 편집과 Record 박스를 포함한 v4.33 테스트 Page를 생성했습니다.')}}
+function createDemoPage(){closeModal();let pid;tx('테스트 Page 생성',()=>{pid=makeTestPage(db,VERSION);db.meta.testSeedInitialized=true});if(pid){rt.pageId=pid;rt.tabId=db.pages[pid].tabOrder[0]||null;rt.selected.clear();rt.search='';render();toast('간편 필드 편집과 Record 박스를 포함한 v4.34 테스트 Page를 생성했습니다.')}}
 // v4.04 legacy convenience functions, implemented on the v4 data model.
 function clearSelection(){rt.selected.clear();renderBody()}
 function cloneEntity(id){const t=curt(),p=page();if(!['bookmark','record'].includes(t?.type))return;const col=t.type==='bookmark'?p.bookmarks:p.records,src=col[id];if(!src)return;tx('Entity 복제',()=>{const n=C(src),nid=alloc(p,t.type);n.id=nid;n.createdAt=Date.now();n.updatedAt=n.createdAt;col[nid]=n});closeModal();toast('복제했습니다.')}
@@ -1174,7 +1174,7 @@ function r432NewTag(iid,key,fid){subModal('새 태그',`<div class="form"><label
 function r432SaveTag(iid,key,fid){const name=document.getElementById('rcTagName').value.trim(),headId=document.getElementById('rcTagHead').value;if(!name)return toast('태그 이름을 입력하세요.');const p=page();let id=Object.values(p.tags).find(x=>x.name===name&&(x.headId||'')===headId)?.id;if(!id)tx('태그 등록',()=>{id=alloc(p,'tag');p.tags[id]={id,name,...(headId?{headId}:{}),createdAt:Date.now(),updatedAt:Date.now()}});closeSubModal();r432PickValue(iid,key,fid,id)}
 function r432Results(iid,c,q){const low=q.toLocaleLowerCase();return Object.values(page().records).filter(r=>r.schemaId===c.schemaId&&(!low||recordEntityTitle(r).toLocaleLowerCase().includes(low))).slice(0,15).map(r=>`<button type="button" onclick="r432Attach('${iid}','${c.key}','${r.id}')">${E(recordEntityTitle(r))}</button>`).join('')||'<span class="muted">검색 결과 없음</span>'}
 function r432Search(iid,key,q){const c=r432Find(iid,key),host=r432Box(iid)?.querySelector(`[data-rc-key="${key}"] [data-rc-results]`);if(c&&host)host.innerHTML=r432Results(iid,c,q)}
-function r432Card(iid,c,index){const p=page(),inp=p.inputs[iid],types=r432Types(inp),source=c.recordId&&p.records[c.recordId],rows=r432Rows(c.schemaId);return `<article class="rc-card" data-rc-key="${c.key}"><div class="rc-head"><label class="check"><input type="checkbox" data-rc-check="${c.key}">Record ${index+1}</label><span class="muted">${source?'연결됨 · '+E(recordEntityTitle(source)):'북마크 전용'}</span><button type="button" class="mini danger" onclick="r432Delete('${iid}','${c.key}')">삭제</button></div>${types.length>1&&!c.recordId?`<label>Record 종류<select onchange="r432ChangeType('${iid}','${c.key}',this.value)">${types.map(sid=>`<option value="${sid}" ${sid===c.schemaId?'selected':''}>${E(recordSchemaLabel(p,sid))}</option>`).join('')}</select></label>`:`<div class="muted">${E(recordSchemaLabel(p,c.schemaId))}</div>`}<div class="rc-search"><input type="search" placeholder="기존 ${E(recordSchemaLabel(p,c.schemaId))} 검색해서 불러오기" aria-label="Record 검색" oninput="r432Search('${iid}','${c.key}',this.value)"></div><div class="rc-options" data-rc-results>${r432Results(iid,c,'')}</div><div class="rc-fields">${rows.map(row=>r432Field(iid,c,row)).join('')}</div><div class="rc-foot"><span class="muted">이 카드의 수정은 이 북마크에만 저장됩니다.</span>${source?`<button type="button" onclick="r432Reload('${iid}','${c.key}')">원본 정보 새로고침</button>`:`<button type="button" onclick="r432Register('${iid}','${c.key}')">새 Record로 등록</button>`}</div></article>`}
+function r432Card(iid,c,index){const p=page(),inp=p.inputs[iid],types=r432Types(inp),source=c.recordId&&p.records[c.recordId],rows=r432Rows(c.schemaId);return `<article class="rc-card" data-rc-key="${c.key}"><div class="rc-head"><label class="check"><input type="checkbox" data-rc-check="${c.key}">Record ${index+1}</label><span class="muted">${source?'연결됨 · '+E(recordEntityTitle(source)):'북마크 전용'}</span><button type="button" class="mini danger" onclick="r432Delete('${iid}','${c.key}')">삭제</button></div>${types.length>1&&!c.recordId?`<label>Record 종류<select onchange="r432ChangeType('${iid}','${c.key}',this.value)">${types.map(sid=>`<option value="${sid}" ${sid===c.schemaId?'selected':''}>${E(recordSchemaLabel(p,sid))}</option>`).join('')}</select></label>`:`<div class="muted">${E(recordSchemaLabel(p,c.schemaId))}</div>`}<div class="rc-search"><input type="search" placeholder="기존 ${E(recordSchemaLabel(p,c.schemaId))} 검색해서 불러오기" aria-label="Record 검색" oninput="r432Search('${iid}','${c.key}',this.value)"></div><div class="rc-options" data-rc-results>${r432Results(iid,c,'')}</div><div class="rc-fields">${rows.map(row=>r432Field(iid,c,row)).join('')}</div><div class="rc-foot"><span class="muted">이 카드의 수정은 이 북마크에만 저장됩니다.</span>${source?`<button type="button" onclick="r432Reload('${iid}','${c.key}')">원본 정보 새로고침</button>`:`<button type="button" onclick="r432Register('${iid}','${c.key}')">전역 Record로 즉시 등록</button>`}</div></article>`}
 function r432Panel(iid){const a=r432.draft[iid]||[];return `<div class="rc-list">${a.map((c,i)=>r432Card(iid,c,i)).join('')||'<div class="record-box-empty">Record가 없습니다. 추가 버튼으로 한 개씩 입력하세요.</div>'}</div><div class="rc-toolbar"><button type="button" class="primary" onclick="r432Add('${iid}')">＋ 레코드 추가</button><button type="button" onclick="r432Copy('${iid}')">복사</button><button type="button" onclick="r432Paste('${iid}')">붙여넣기</button><span class="muted">${a.length}개</span></div><select class="relhidden" data-i="${iid}" ${page().inputs[iid].multiple?'multiple':''}>${[...new Set(a.map(c=>c.recordId).filter(id=>page().records[id]))].map(id=>`<option value="${id}" selected>${E(recordEntityTitle(page().records[id]))}</option>`).join('')}</select>`}
 function r432Render(iid){const box=r432Box(iid);if(box)box.innerHTML=r432Panel(iid)}
 function r432Add(iid){const types=r432Types(page().inputs[iid]);if(!types.length)return toast('필드 설정에서 Record 탭을 먼저 선택하세요.');(r432.draft[iid]||=[]).push(r432Entry(types[0]));r432Render(iid)}
@@ -1211,4 +1211,244 @@ const r432AddField=addFieldUI;
 addFieldUI=function(){r432AddField();const mode=document.getElementById('newInputRecordMode');if(mode){mode.value='box';mode.closest('label').style.display='none'}};
 
 load().catch(e=>{rt.lastError=e.message;document.getElementById('app').innerHTML='<div class="empty">시작 실패: '+E(e.message)+'</div>'});
+/* v4.34: keep record-card state, relations, and field settings consistent. */
+const r434={autoTags:{},schemaSession:null};
+function r434TagKey(dest,id){return dest+'|'+id}
+function r434Route(c,fid,id){
+ const dest=r432TagDestination(id);
+ if(!dest||!writeEntityFormValue(dest,[id],true))return false;
+ const key=r434TagKey(dest,id),el=currentEntityFormElement(dest);
+ if(!Array.isArray(c.routedTags))c.routedTags=[];
+ if(!c.routedTags.some(x=>x.fid===fid&&x.id===id&&x.dest===dest))c.routedTags.push({fid,id,dest});
+ if(!r434.autoTags[key] && el && !r434.preexisting?.has(key))r434.autoTags[key]=true;
+ return true
+}
+function r434Release(c){
+ for(const item of c.routedTags||[]){
+  const key=r434TagKey(item.dest,item.id);
+  if(!r434.autoTags[key])continue;
+  const other=Object.values(r432.draft).some(cards=>cards.some(x=>x!==c&&(x.routedTags||[]).some(y=>y.dest===item.dest&&y.id===item.id)));
+  if(other)continue;
+  const el=currentEntityFormElement(item.dest);
+  if(el?.tagName==='SELECT')for(const o of el.options)if(o.value===item.id)o.selected=false;
+  if(el)refreshRelationPicker(item.dest);
+  delete r434.autoTags[key]
+ }
+ c.routedTags=[]
+}
+r432RouteValues=function(c){
+ for(const [fid,v] of Object.entries(c.values)){
+  const inp=page().inputs[fid];if(inp?.target!=='tag')continue;
+  const ids=Array.isArray(v)?v:(v?[v]:[]);
+  const keep=ids.filter(id=>!r434Route(c,fid,id));
+  c.values[fid]=inp.multiple?keep:(keep[0]||'')
+ }
+};
+const r434OldPick=r432PickValue;
+r432PickValue=function(iid,key,fid,id){
+ const c=r432Find(iid,key),inp=page().inputs[fid];
+ if(c&&inp?.target==='tag'&&r434Route(c,fid,id)){toast('태그 머리 우선등록 칸에 추가했습니다.');return}
+ return r434OldPick(iid,key,fid,id)
+};
+r432Delete=function(iid,key){
+ const c=r432Find(iid,key);if(c)r434Release(c);
+ r432.draft[iid]=(r432.draft[iid]||[]).filter(x=>x.key!==key);r432Render(iid)
+};
+r432Attach=function(iid,key,rid){
+ const c=r432Find(iid,key),r=page().records[rid];if(!c||!r||r.schemaId!==c.schemaId)return;
+ const same=c.recordId===rid,old=C(c.values),over=new Set(c.overrides||[]);
+ if(!same){r434Release(c);c.overrides=[]}
+ c.recordId=rid;c.values=C(r.values||{});
+ if(same)for(const fid of over)if(Object.prototype.hasOwnProperty.call(old,fid))c.values[fid]=old[fid];
+ r432RouteValues(c);r432Render(iid)
+};
+r432ChangeType=function(iid,key,sid){
+ const c=r432Find(iid,key);if(!c||!r432Types(page().inputs[iid]).includes(sid))return;
+ r434Release(c);c.typeDrafts=c.typeDrafts||{};
+ c.typeDrafts[c.schemaId]={values:C(c.values),overrides:C(c.overrides)};
+ c.schemaId=sid;c.values=C(c.typeDrafts[sid]?.values||{});c.recordId=null;c.overrides=C(c.typeDrafts[sid]?.overrides||[]);
+ r432RouteValues(c);r432Render(iid)
+};
+const r434OldRegister=r432Register;
+r432Register=function(iid,key){
+ const c=r432Find(iid,key);if(!c)return;
+ const saved=c.values;c.values=C(saved);
+ for(const x of c.routedTags||[]){const inp=page().inputs[x.fid],old=c.values[x.fid],arr=Array.isArray(old)?old:(old?[old]:[]);
+ c.values[x.fid]=inp?.multiple?[...new Set([...arr,x.id])]:x.id}
+ r434OldRegister(iid,key);c.values=saved
+};
+const r434OldEdit=editEntity;
+editEntity=function(id){
+ r434.autoTags={};r434.preexisting=new Set();
+ r434OldEdit(id);
+ const e=id?(curt()?.type==='bookmark'?page().bookmarks[id]:page().records[id]):null;
+ r434.autoTags=C(e?.autoRoutedTags||{});
+ for(const el of document.querySelectorAll('#modal select[data-i]'))if(page().inputs[el.dataset.i]?.target==='tag')
+  for(const o of el.selectedOptions)if(!r434.autoTags[r434TagKey(el.dataset.i,o.value)])r434.preexisting.add(r434TagKey(el.dataset.i,o.value));
+ r434GroupEntityForm()
+};
+const r434OldEditor=editor;
+editor=function(inp,v,pl){return r434OldEditor(pl?.alias?{...inp,name:pl.alias}:inp,v,pl)};
+function r434GroupEntityForm(){
+ const form=document.querySelector('#modal .modalbody>.form'),t=curt(),s=t&&page().schemas[t.schemaId];
+ if(!form||!s)return;
+ for(const gid of s.fieldOrder||[]){
+  const f=s.fields[gid],nodes=[];
+  for(const qid of f?.placementOrder||[]){
+   const iid=f.placements[qid]?.inputId;if(!iid)continue;
+   const child=[...form.children].find(x=>x.matches?.('[data-i="'+iid+'"]')||x.querySelector?.('[data-i="'+iid+'"]'));
+   if(child&&!nodes.includes(child))nodes.push(child)
+  }
+  if(nodes.length<2)continue;
+  const group=document.createElement('fieldset');group.className='entity-field-group';
+  const legend=document.createElement('legend');legend.textContent=f.name;group.append(legend);
+  form.insertBefore(group,nodes[0]);for(const node of nodes)group.append(node)
+ }
+}
+const r434OldUsage=tagUsageMap;
+tagUsageMap=function(){
+ const usage=r434OldUsage(),p=page();
+ for(const kind of ['bookmarks','records'])for(const e of Object.values(p[kind]||{})){
+  const local=new Set();
+  for(const cards of Object.values(e.recordEntries||{}))for(const c of cards)for(const [fid,v] of Object.entries(c.values||{}))
+   if(p.inputs[fid]?.target==='tag')for(const id of (Array.isArray(v)?v:[v]))if(p.tags[id])local.add(id);
+  for(const id of local){
+   const direct=Object.entries(e.values||{}).some(([fid,v])=>p.inputs[fid]?.target==='tag'&&(Array.isArray(v)?v:[v]).includes(id));
+   if(!direct)usage[id]=(usage[id]||0)+1
+  }
+ }
+ return usage
+};
+const r434OldDeleteTab=deleteTabNow;
+deleteTabNow=function(id){
+ const p=page(),sid=p.tabs[id]?.schemaId;
+ if(p.tabs[id]?.type==='record'&&sid){
+  const records=Object.values(p.records).filter(r=>r.schemaId===sid).length;
+  const cards=[...Object.values(p.bookmarks),...Object.values(p.records)].flatMap(e=>Object.values(e.recordEntries||{}).flat()).filter(c=>c.schemaId===sid).length;
+  if(records||cards)return toast('이 탭에 Record '+records+'개와 북마크 카드 '+cards+'개가 있어 삭제할 수 없습니다. 먼저 이동하거나 삭제하세요.')
+ }
+ return r434OldDeleteTab(id)
+};
+const r434OldRecordSettings=saveRecordInputSettings;
+const r434OldTypes=r432Types;
+r432Types=function(inp){
+ const p=page(),scopes=[];
+ for(const s of Object.values(p.schemas||{}))for(const gid of s.fieldOrder||[])
+  for(const qid of s.fields[gid]?.placementOrder||[]){
+   const pl=s.fields[gid].placements[qid];
+   if(pl.inputId===inp.id)scopes.push(...(pl.recordInput?.schemaIds||[]))
+  }
+ return scopes.length?[...new Set(scopes)].filter(id=>p.schemas[id]?.entityType==='record'):r434OldTypes(inp,arguments[1])
+};
+saveRecordInputSettings=function(qid){
+ const selected=[...document.querySelectorAll('[data-rc-type]:checked')].map(x=>x.dataset.rcType);
+ if(!selected.length)return toast('조회할 Record 탭을 하나 이상 선택하세요.');
+ const hit=currentSchemaPlacement(qid);if(!hit)return;
+ tx('Record 입력 설정',()=>{
+  const p=page();hit.inp.multiple=true;
+  for(const sc of Object.values(p.schemas))for(const gid of sc.fieldOrder||[])for(const id of sc.fields[gid]?.placementOrder||[]){
+   const pl=sc.fields[gid].placements[id];
+   if(pl.inputId===hit.inp.id)pl.recordInput={...(pl.recordInput||{}),schemaIds:selected,mode:'box'}
+  }
+ });
+ closeSubModal();schemaModal()
+};
+const r434OldSaveSchema=saveSchemaRules;
+saveSchemaRules=function(){r434.schemaSession=null;return r434OldSaveSchema()};
+const r434OldSchemaModal=schemaModal;
+schemaModal=function(){
+ if(!r434.schemaSession)r434.schemaSession={before:C(db),pageId:rt.pageId};
+ r434OldSchemaModal();
+ const root=document.querySelector('#modal .schema-editor');if(!root)return;
+ const cancel=document.querySelector('#modal .modalfoot button:not(.primary)');
+ if(cancel)cancel.setAttribute('onclick','r434CancelSchema()');
+ const close=document.querySelector('#modal .modalclose');
+ if(close)close.setAttribute('onclick','r434CancelSchema()')
+};
+function r434CancelSchema(){
+ const session=r434.schemaSession;r434.schemaSession=null;closeSubModal();closeModal();
+ if(!session||session.pageId!==rt.pageId)return;
+ if(JSON.stringify(db)===JSON.stringify(session.before))return;
+ tx('필드 편집 취소',()=>{db=C(session.before)})
+}
+const r434OldSaveInputDefinition=saveInputDefinition;
+saveInputDefinition=function(iid){
+ const old=page().inputs[iid]?.name,next=document.getElementById('inputDefName')?.value.trim();
+ if(old&&next&&old!==next)for(const el of document.querySelectorAll('#modal [data-basic-name]'))
+  if(el.dataset.basicName===iid&&el.value===old)el.value=next;
+ return r434OldSaveInputDefinition(iid)
+};
+const r434OldCloseModal=closeModal;
+closeModal=function(){
+ if(r434.schemaSession&&document.querySelector('#modal .schema-editor'))return r434CancelSchema();
+ return r434OldCloseModal()
+};
+applyBookmarkPreset=function(kind){
+ const p=page(),t=curt();if(t?.type!=='bookmark')return;
+ tx('Bookmark UI 프리셋',()=>applyBookmarkPresetToTab(p,t,kind));
+ r434.schemaSession=null;r434OldCloseModal();
+ toast(kind==='v1'?'v1 Bookmark 카드 프리셋을 적용했습니다.':'v2 Field 카드 프리셋을 적용했습니다.')
+};
+function r434ValidRelation(inp,ids){
+ const map=relationMap(inp.target);return ids.every(id=>Object.prototype.hasOwnProperty.call(map,id))
+}
+applyBulkEdit=function(){
+ const p=page(),t=curt(),iid=document.getElementById('bulkI')?.value,op=document.getElementById('bulkOp')?.value,
+ raw=document.getElementById('bulkV')?.value.trim()||'',inp=p.inputs[iid],vals=[...new Set(raw.split(',').map(x=>x.trim()).filter(Boolean))];
+ if(!inp||!['set','add','remove','clear'].includes(op))return;
+ if(!inp.multiple&&['add','remove'].includes(op))return toast('단일 값은 설정 또는 비우기만 가능합니다.');
+ if(op!=='clear'&&!raw)return toast('적용할 값을 입력하세요.');
+ if(inp.type==='relation'&&op!=='clear'&&!r434ValidRelation(inp,vals))return toast('존재하지 않는 Relation ID가 있습니다.');
+ if(inp.target==='record'&&op!=='clear'&&vals.some(id=>!r432Types(inp).includes(p.records[id]?.schemaId)))
+  return toast('이 필드에서 조회하지 않는 Record 종류가 포함되어 있습니다.');
+ let value=raw;
+ if(inp.type==='boolean'&&op!=='clear'){
+  const v=raw.toLowerCase();
+  if(['true','1','yes','y','예'].includes(v))value=true;
+  else if(['false','0','no','n','아니오'].includes(v))value=false;
+  else return toast('Boolean 값은 예/아니오, true/false, 1/0 중 하나를 입력하세요.')
+ }else if(['number','duration'].includes(inp.type)&&op!=='clear'){
+  value=Number(raw);if(!Number.isFinite(value))return toast('올바른 숫자를 입력하세요.')
+ }
+ tx('Bulk Input 편집',()=>{
+  const col=t.type==='bookmark'?p.bookmarks:p.records;
+  for(const id of rt.selected){
+   const e=col[id];if(!e)continue;
+   if(inp.type==='relation'&&inp.target==='record'){
+    e.recordEntries||={};
+    const prev=r432Entries(e,iid),next=op==='clear'?[]:op==='set'?vals:
+     op==='add'?[...new Set([...prev.map(c=>c.recordId).filter(Boolean),...vals])]:prev.map(c=>c.recordId).filter(x=>x&&!vals.includes(x));
+    const existing=new Map(prev.filter(c=>c.recordId).map(c=>[c.recordId,c]));
+    e.recordEntries[iid]=next.map(rid=>existing.get(rid)||r432Entry(p.records[rid].schemaId,p.records[rid]));
+    if(next.length)e.values[iid]=next;else delete e.values[iid];
+    continue
+   }
+   if(op==='clear'){delete e.values[iid];continue}
+   if(inp.type==='relation'&&inp.multiple){
+    const cur=Array.isArray(e.values[iid])?e.values[iid]:[];
+    const next=op==='set'?vals:op==='add'?[...new Set([...cur,...vals])]:cur.filter(x=>!vals.includes(x));
+    if(next.length)e.values[iid]=next;else delete e.values[iid]
+   }else e.values[iid]=inp.type==='relation'?vals[0]:value
+  }
+ });
+ closeModal()
+};
+const r434OldValidate=validate;
+validate=function(d){
+ const issues=r434OldValidate(d);
+ for(const [pid,p] of Object.entries(d?.pages||{})){
+  for(const [kind,col] of [['bookmarks',p.bookmarks||{}],['records',p.records||{}]])
+   for(const [eid,e] of Object.entries(col)){
+    if(kind==='records'&&e.schemaId&&!p.schemas?.[e.schemaId])issues.push(`${pid}/${eid}: Record Schema 없음`);
+    for(const [iid,v] of Object.entries(e.values||{})){
+     const inp=p.inputs?.[iid];if(inp?.type!=='relation')continue;
+     const map=({tag:p.tags,record:p.records,bookmark:p.bookmarks,category:p.categories,folder:p.folders})[inp.target]||{};
+     for(const id of (Array.isArray(v)?v:[v]))if(id&&!map?.[id])issues.push(`${pid}/${eid}/${iid}: 없는 Relation 참조 ${id}`)
+    }
+    for(const cards of Object.values(e.recordEntries||{}))for(const c of cards)
+     if(!p.schemas?.[c.schemaId])issues.push(`${pid}/${eid}: Record 카드 Schema 없음`)
+   }
+ }
+ return [...new Set(issues)]
+};
 </script></body></html>
